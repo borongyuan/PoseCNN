@@ -10,7 +10,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 add_definitions(-std=c++11)
 add_definitions(-Wall)
 add_definitions(-fPIC)
-#add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0)
+add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0)
 
 include(${CMAKE_SOURCE_DIR}/cmake/FindNLopt.cmake)
 
@@ -31,6 +31,8 @@ endif()
 set(BOOST_INCLUDE_DIRS "/usr/local/include")
 set(BOOST_LIBRARY_DIRS "/usr/local/lib/boost")
 
+set(Sophus_INCLUDE_DIRS "/opt/ros/kinetic/include")
+
 set(xFusion_ROOT ${PROJECT_SOURCE_DIR}/../kinect_fusion)
 set(xFusion_INCLUDE_DIRS ${xFusion_ROOT}/include)
 set(xFusion_LIBRARY_DIRS ${xFusion_ROOT}/build)
@@ -48,6 +50,7 @@ list(REMOVE_ITEM PCL_LIBRARIES "vtkproj4")
 include_directories(${Pangolin_INCLUDE_DIRS}
                     ${xFusion_INCLUDE_DIRS}
                     ${EIGEN3_INCLUDE_DIR}
+                    ${Sophus_INCLUDE_DIRS}
                     ${OpenEXR_INCLUDE_DIRS}
                     ${SUITESPARSE_INCLUDE_DIRS}
                     ${OpenCV_INCLUDE_DIRS}
