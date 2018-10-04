@@ -10,6 +10,8 @@
 *.png
 output*
 lib/icp/icp_main.cpp
+lib/normals/*.cpp
+lib/synthesize/build/*
 ros/build/*
 ros/data/*
 ros/devel/*
