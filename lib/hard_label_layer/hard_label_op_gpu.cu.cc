@@ -33,7 +33,7 @@ bool HardlabelForwardLaucher(const float* bottom_prob, const int* bottom_gt,
   const int batch_size, const int height, const int width, const int num_classes,
   const float threshold, float* top_data, const Eigen::GpuDevice& d)
 {
-  const int kThreadsPerBlock = 1;
+  const int kThreadsPerBlock = 512;
   const int output_size = batch_size * height * width;
   cudaError_t err;
 

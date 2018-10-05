@@ -260,7 +260,7 @@ void AveragedistanceForwardLaucher(OpKernelContext* context,
 {
   // run kernels
   cudaError_t err;
-  const int kThreadsPerBlock = 1;
+  const int kThreadsPerBlock = 512;
   int output_size;
 
   // temp losses
