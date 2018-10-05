@@ -122,7 +122,7 @@ bool ComputeFlowForwardLaucher(
     const int kernel_size, const float threshold, const float max_weight,
     float* top_data, float* top_weights, float* top_points, const Eigen::GpuDevice& d)
 {
-  const int kThreadsPerBlock = 512;
+  const int kThreadsPerBlock = 1024;
   cudaError_t err;
 
   const int output_size = batch_size * height * width * channels;

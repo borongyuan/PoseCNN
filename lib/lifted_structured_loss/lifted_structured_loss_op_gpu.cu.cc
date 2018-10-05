@@ -312,7 +312,7 @@ bool LiftedstructForwardLaucher(
   cudaMemcpy(pixel_labels_device, pixel_labels.data(), num_pixels * sizeof(int), cudaMemcpyHostToDevice);
   cudaMemcpy(positive_indexes_device, positive_indexes.data(), num_positives * sizeof(int), cudaMemcpyHostToDevice);
 
-  const int kThreadsPerBlock = 512;
+  const int kThreadsPerBlock = 1024;
   cudaError_t err;
 
   // compute distance and label matrix

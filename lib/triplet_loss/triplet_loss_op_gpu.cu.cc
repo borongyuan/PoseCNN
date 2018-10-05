@@ -246,7 +246,7 @@ bool TripletForwardLaucher(
 
   // run kernels
   cudaError_t err;
-  const int kThreadsPerBlock = 512;
+  const int kThreadsPerBlock = 1024;
   const int output_size = batch_size * height * width;
 
   // compute the loss matrix
