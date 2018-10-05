@@ -106,7 +106,7 @@ bool ROIPoolForwardLaucher(
     const int pooled_width, const float* bottom_rois,
     float* top_data, int* argmax_data, const Eigen::GpuDevice& d) 
 {
-  const int kThreadsPerBlock = 512;
+  const int kThreadsPerBlock = 1;
   int output_size;
   cudaError_t err;
 
